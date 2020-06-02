@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>mod_tc_latest_news</name>
+	<author>ThemeChoice.com</author>
+	<creationDate>December 2015</creationDate>
+	<copyright>Copyright (C) 2015 ThemeChoice.com All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyright/gpl.html GNU/GPL</license>
+	<authorEmail>info@themechoice.com</authorEmail>
+	<authorUrl>http://www.themechoice.com</authorUrl>
+	<version>1.0.3</version>
+	<description>MOD_TC_LATEST_NEWS_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_tc_latest_news">mod_tc_latest_news.php</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<filename>helper.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tc_latest_news.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_tc_latest_news.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="catid"
+					type="category"
+					extension="com_content"
+					multiple="true"
+					size="10"
+					default=""
+					label="JCATEGORY"
+					description="MOD_TC_LATEST_NEWS_FIELD_CATEGORY_DESC"
+				>
+					<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+				
+			  <field 
+					name="per_row"
+					type="list"
+					default="4"
+					label="MOD_TC_LATEST_NEWS_ITEM_PER_ROW"
+					description="MOD_TC_LATEST_NEWS_ITEM_PER_ROW_DESC">
+			        <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+									
+				</field>
+				<field name="list_layout" type="list" default="grid" label="MOD_TC_LATEST_NEWS_SELECT_LAYOUT" description="">
+				  <option value="grid">Grid Layout</option>
+				  <option value="list">List/Carousel Layout</option>
+				  <option value="list2">List2/Carousel2 Layout</option>
+				  <option value="list3">List3/Carousel3 Layout</option>
+				</field>
+
+				<field
+					name="count"
+					type="text"
+					default="5"
+					label="MOD_TC_LATEST_NEWS_FIELD_COUNT_LABEL"
+					description="MOD_TC_LATEST_NEWS_FIELD_COUNT_DESC" />
+				<field
+					name="char_limit"
+					type="text"
+					default="200"
+					label="Character Limit"
+					description="" />
+
+
+				<field
+					name="show_featured"
+					type="list"
+					default=""
+					label="MOD_TC_LATEST_NEWS_FIELD_FEATURED_LABEL"
+					description="MOD_TC_LATEST_NEWS_FIELD_FEATURED_DESC"
+				>
+					<option value="">JSHOW</option>
+					<option value="0">JHIDE</option>
+					<option value="1">MOD_TC_LATEST_NEWS_VALUE_ONLY_SHOW_FEATURED</option>
+				</field>
+
+				<field
+					name="ordering"
+					type="list"
+					default="published"
+					label="MOD_TC_LATEST_NEWS_FIELD_ORDERING_LABEL"
+					description="MOD_TC_LATEST_NEWS_FIELD_ORDERING_DESC"
+				>
+					<option value="c_dsc">MOD_TC_LATEST_NEWS_VALUE_RECENT_ADDED</option>
+					<option value="m_dsc">MOD_TC_LATEST_NEWS_VALUE_RECENT_MODIFIED</option>
+					<option value="p_dsc">MOD_TC_LATEST_NEWS_VALUE_RECENT_PUBLISHED</option>
+					<option value="mc_dsc">MOD_TC_LATEST_NEWS_VALUE_RECENT_TOUCHED</option>
+					<option	value="random">MOD_TC_LATEST_NEWS_VALUE_RECENT_RAND</option>
+				</field>
+
+				<field
+					name="user_id"
+					type="list"
+					default="0"
+					label="MOD_TC_LATEST_NEWS_FIELD_USER_LABEL"
+					description="MOD_TC_LATEST_NEWS_FIELD_USER_DESC"
+				>
+					<option value="0">MOD_TC_LATEST_NEWS_VALUE_ANYONE</option>
+					<option value="by_me">MOD_TC_LATEST_NEWS_VALUE_ADDED_BY_ME</option>
+					<option value="not_me">MOD_TC_LATEST_NEWS_VALUE_NOTADDED_BY_ME</option>
+				</field>
+
+				<field name="autoplay" type="radio" default="true" label="MOD_TC_LATEST_NEWS_AUTOPLAY" description="MOD_TC_LATEST_NEWS_AUTOPLAY_DESC" class="btn-group btn-group-yesno">
+					  <option value="false">No</option>
+					  <option value="true">Yes</option>
+				</field>
+				<field
+					name="slide_speed"
+					type="text"
+					default="250"
+					label="MOD_TC_LATEST_NEWS_AUTOPLAY_SPEED"
+					description="" />
+				
+				<field name="nav" type="radio" default="true" label="MOD_TC_LATEST_NEWS_NAV" description="MOD_TC_LATEST_NEWS_NAV_DESC" class="btn-group btn-group-yesno">
+					  <option value="false">No</option>
+					  <option value="true">Yes</option>
+				</field>
+				<field name="pagination" type="radio" default="true" label="Pagination" description="" class="btn-group btn-group-yesno">
+					  <option value="false">No</option>
+					  <option value="true">Yes</option>
+				</field>				<field name="show_title" type="radio" default="1" label="MOD_TC_LATEST_NEWS_SHOW_TITLE" description="MOD_TC_LATEST_NEWS_SHOW_TITLE_DESC" class="btn-group btn-group-yesno">
+					  <option value="0">No</option>
+					  <option value="1">Yes</option>
+				</field>
+				<field name="show_date" type="radio" default="1" label="MOD_TC_LATEST_NEWS_SHOW_DATE" description="MOD_TC_LATEST_NEWS_SHOW_DATE_DESC" class="btn-group btn-group-yesno">
+					  <option value="0">No</option>
+					  <option value="1">Yes</option>
+				</field>
+
+				<field name="show_desc" type="radio" default="1" label="MOD_TC_LATEST_NEWS_SHOW_DESCRIPTION" description="MOD_TC_LATEST_NEWS_SHOW_DESCRIPTION_DESC" class="btn-group btn-group-yesno">
+					  <option value="0">No</option>
+					  <option value="1">Yes</option>
+				</field>
+			    <field name="show_category" type="radio" default="1" label="MOD_TC_LATEST_NEWS_SHOW_CATEGORY" 
+				description="MOD_TC_LATEST_NEWS_SHOW_CATEGORY_DESC" class="btn-group btn-group-yesno">
+					  <option value="0">No</option>
+					  <option value="1">Yes</option>
+				</field>
+			    <field name="show_image" type="radio" default="1" label="MOD_TC_LATEST_NEWS_SHOW_IMAGE" 
+				description="MOD_TC_LATEST_NEWS_SHOW_IMAGE_DESC" class="btn-group btn-group-yesno">
+					  <option value="0">No</option>
+					  <option value="1">Yes</option>
+				</field>
+
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+				>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static"
+				>
+					<option value="static"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

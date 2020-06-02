@@ -1,0 +1,6 @@
+Deny from ALL
+Allow from 122.166.207.70
+AuthType Basic
+AuthName "Restricted Content"
+AuthUserFile /etc/apache2/.htpasswd
+Require valid-user

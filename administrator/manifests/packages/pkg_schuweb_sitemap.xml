@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="3.0" method="upgrade">
+    <name>SchuWeb Sitemap Package</name>
+    <packagename>schuweb_sitemap</packagename>
+    <creationDate>20200417</creationDate>
+    <author>Sven Schultschik</author>
+    <version>3.1.0</version>
+    <url>http://extensions.schultschik.de</url>
+    <packager>SchuWeb Sitemap</packager>
+    <packagerurl>http://extensions.schultschik.de</packagerurl>
+    <license>GNU/GPL</license>
+    <description>The Site Map generator for Joomla!</description>
+    <scriptfile>install.script.php</scriptfile>
+    <files folder="packages">
+        <file type="component" id="com_schuweb_sitemap">com_schuweb_sitemap_3.1.0_20200417.zip</file>
+        <file type="plugin" id="com_content" group="schuweb_sitemap">plg_content_3.1.0_20200417.zip</file>
+        <file type="plugin" id="com_kunena" group="schuweb_sitemap">plg_kunena_3.1.0_20200417.zip</file>
+        <file type="plugin" id="com_sobipro" group="schuweb_sitemap">plg_sobipro_3.1.0_20200417.zip</file>
+        <file type="plugin" id="com_virtuemart" group="schuweb_sitemap">plg_virtuemart_3.1.0_20200417.zip</file>
+        <!--file type="plugin" id="com_mtree" group="schuweb_sitemap">plg_com_mtree.zip</file>
+        <file type="plugin" id="com_weblinks" group="schuweb_sitemap">plg_com_weblinks.zip</file>
+        <file type="plugin" id="com_k2" group="schuweb_sitemap">plg_com_k2.zip</file-->
+    </files>
+</extension>
